@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GPT-2 Text Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>GPT-2 Text Generator</h1>
+
+        <form method="POST">
+            <textarea name="prompt" placeholder="Enter your text here..." required></textarea>
+            <br>
+            <button type="submit">Generate</button>
+        </form>
+
+        {% if output %}
+        <div class="result">
+            <h3>Generated Text:</h3>
+            <p>{{ output }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
